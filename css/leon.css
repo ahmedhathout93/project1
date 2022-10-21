@@ -23,23 +23,56 @@ body {
     padding-right: 15px;
     padding-left: 15px;
 }
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { .container{width: 550px;} }
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { .container{width: 750px;} }
-
-/*Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { .container{width: 970px;} }
-
-/*Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { .container{width: 1170px;} }
-/* End global rules */
+/* Small */
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  /* End global rules */
+  /* start components  */
+  .special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+  }
+  .special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+  }
+  @media (max-width: 767px) {
+    .special-heading {
+      font-size: 60px;
+    }
+    .special-heading + p {
+      margin-top: -20px;
+    }
+  }
+  /* end components */
 
 /* Start Header */
+
 .header {
-    padding: 20px;
+     padding: 20px;
 }
+
 .header .container{
     display: flex;
     justify-content: space-between;
@@ -155,7 +188,7 @@ background-size: cover;
 }
 .features .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(300PX, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 .features .feat {
@@ -210,11 +243,12 @@ margin-bottom: 40px;
 color: var(--main-color);
 flex-basis: 60px;
 }
-.services .serv-content .serv  .text { flex:1;
+.services .serv-content .serv  .text {
+     flex:1;
 }
 
 
-@media (max-width:767px){
+@media (max-width: 767px){
     .services .serv-content .serv {
     flex-direction: column;
     text-align: center;
@@ -242,7 +276,7 @@ line-height: 1.8;
     position: absolute;
     background-color:var(--secondary-color);
     height: calc(100% + 100px);
-    width: 80px;
+    width: 100px;
     right: 10px;;
     top: -50px; ;
     z-index: -1;
@@ -251,6 +285,7 @@ line-height: 1.8;
 .services .image {
     display: none;
 }
+
 }
 
 /* end services section  */
@@ -305,7 +340,7 @@ line-height: 1.8;
 /* start about section  */
 .about {
     padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) + 60px);
 }
 .about .container .about-heading {
     color: #ebeced;
@@ -328,10 +363,10 @@ line-height: 1.8;
     justify-content: space-between;
     margin-top: 100px;
 }
-.about .text {
-    flex-basis:  calc(100% - 500px);
+.about .about-content .text {
+    flex-basis:calc(100% - 500px);
     }
-.about .image img {
+.about .about-content .image img {
     max-width: 100%;
 }
 .about .image {
@@ -378,22 +413,23 @@ left: -20px;
     border-color: var(--main-color);
 
 }
-@media (max-width:990px){
-    .about .image::after{
-        display: none;
-    }
-    .about .image::before{
-        display: none;
-    }
+@media (max-width: 991px) {
     .about .about-content {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
-    .about .image {
-        margin: 0 auto 60px;
+  }
+  @media (max-width: 991px) {
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+      display: none;
     }
-}
-
+  }
+  @media (max-width: 991px) {
+    .about .about-content .image {
+      margin: 0 auto 60px;
+    }
+  }
 /* end about section  */
 
 /* start contact section  */
@@ -453,7 +489,24 @@ left: -20px;
     font-size: 25px;
     }
 }
+
+
 /* end contact section  */
+.footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 10px;
+    color: white;
+}
+.footer span {
+    color:var(--main-color);
+    font-weight: bold;
+    
+}
+/* start footer section  */
+
+/* end footer section  */
 
 
 
